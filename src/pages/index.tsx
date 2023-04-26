@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { useState, useEffect } from "react";
-import { QrCodeReader } from "@/components/QrCodeReader"
 import { QrScanner } from '@yudiel/react-qr-scanner';
 import Navbar from '@/components/organ/Navbar';
 import Landing from '@/components/home/Landing';
