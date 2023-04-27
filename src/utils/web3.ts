@@ -15,6 +15,7 @@ export const checkIfDiplomeExists = async (diplomaHash: string) => {
 
     try {
         const result = await contract.methods.getDiploma(diplomaHash).call({ from: CONTRACT_OWNER })
+        console.log(result)
         return result
     } catch (e) {
         return false

@@ -41,18 +41,18 @@ export default async function handler (
             } else {
                 dataToCompare = web3.utils.keccak256(decryptedData);
             }
+            console.log("HASSHH : ", dataToCompare)
 
+            const dataFromBlockchain = await checkIfDiplomeExists(dataToCompare);
 
-            // const dataFromBlockchain = await checkIfDiplomeExists(dataToCompare);
+            if (!dataFromBlockchain || !dataFromBlockchain.length) {
+                return res.status(400).send({ msg: "Diplome n'existe pas dans la blockchain" })
+            }
 
-            // if (!dataFromBlockchain) {
-            //     return res.status(400).send({ msg: "Diplome doesnt exist" })
-            // }
-
-            return res.status(200).send({ msg: dataToCompare })
+            return res.status(200).send({ msg: dataFromBlockchain })
         } catch (e) {
             console.log(e)
-            return res.status(400).send({ msg: "Bad Data" })
+            return res.status(400).send({ msg: "Data Malformée" })
         }
 
     } else {
