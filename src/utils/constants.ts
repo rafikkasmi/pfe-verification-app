@@ -4,6 +4,8 @@ export const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS || "0x2376733b5Faf1
 
 export const CONTRACT_OWNER = process.env.CONTRACT_OWNER || "0x4109C12d814CE5CaB03d44281F0cE0BAb0B09cBF";
 
+export const WEB3_API = process.env.WEB3_API || 'http://localhost:7545';
+
 export const ENCYPTION_SECRET_KEY = process.env.SECRET_KEY || "secretRandomShitThatNoOneKnows#1"
 
 export const ENCYPTION_SECRET_IV_KEY = process.env.SECRET_IV_KEY || "secretRandomShitThatNoOneKnows#2"
